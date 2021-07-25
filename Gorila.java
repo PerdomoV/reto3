@@ -7,28 +7,24 @@ import Animal.Alimento;
 public class Gorila extends Animal{
 
   public Gorila(double peso, double altura){
-    super.setPeso(peso);
-    super.setAltura(altura);
+    this.setPeso(peso);
+    this.setAltura(altura);
   }
 
-  public Alimento[] getPesoAlims(){
-    return super.getAlimsIngeridos();
+  public double getPesoAlims(){
+    
+    double sumaPeso = 0;
+    for(int i = 0; i < this.getAlimsIngeridos().length; i++){
+	sumaPeso += this.getAlimsIngeridos()[i].getGramos();
+    }
+    
+    return sumaPeso;
   }
 
 
   public double getIMC(){
-    Alimento[] Alims = super.getAlimsIngeridos();
-    double[] pesoAlims = new double[Alims.length];
-    double sumaPeso = 0;
-
-    for(i=0;i<Alims.length;i++){
-	pesoAlims[i] = Alims[i].getGramos()*1000; 
-    }
-    for(j=0;j<pesoAlims.length;j++){
-	sumaPeso += pesoAlims[0];
-    }
-
-    return (sumaPeso + super.getPeso()  )/ (super.getAltura*super.getAltura() );
+   
+   return (this.getPesoAlims()/1000 + this.getPeso()  )/ (this.getAltura()*this.getAltura() ); 
   } 
 
 }
