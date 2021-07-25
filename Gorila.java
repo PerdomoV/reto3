@@ -13,7 +13,7 @@ public class Gorila extends Animal{
 
   public double getPesoAlims(){
     
-    double sumaPeso = 0;
+    int sumaPeso = 0;
     for(int i = 0; i < this.getAlimsIngeridos().length; i++){
 	sumaPeso += this.getAlimsIngeridos()[i].getGramos();
     }

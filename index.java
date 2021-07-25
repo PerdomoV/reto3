@@ -2,7 +2,7 @@ import Animal.Alimento;
 import Animal.Animal;
 import java.lang.Math;
 import Animal.Gorila;
-class index{
+public class index{
  
   public static void main(String[] args){
        Alimento banana = new Alimento(120);
